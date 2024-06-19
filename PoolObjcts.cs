@@ -17,15 +17,21 @@ public class PoolObjcts<T> where T : MonoBehaviour
 
     public T GetGameObject()
     {
+        T obj;
+
         if (_pool.Count == 0)
         {
-            T obj = Object.Instantiate(_prefab);
+            obj = Object.Instantiate(_prefab);
             obj.transform.parent = _conteiner;
-
-            return obj;
+        }
+        else
+        {
+            obj = _pool.Pop();
         }
 
-        return _pool.Pop();
+        obj.gameObject.SetActive(true);
+
+        return obj;
     }
 
     public void PutGameObject(T obj)

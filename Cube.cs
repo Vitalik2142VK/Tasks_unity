@@ -11,7 +11,7 @@ public class Cube : MonoBehaviour
     private float _waitTime;
     private bool _isBeenCollision = false;
 
-    public event Action<Cube> Removal;
+    public event Action<Cube> Removed;
 
     public bool IsBeenCollision => _isBeenCollision;
 
@@ -38,6 +38,6 @@ public class Cube : MonoBehaviour
     {
         yield return new WaitForSeconds(_waitTime);
 
-        Removal?.Invoke(this);
+        Removed?.Invoke(this);
     }
 }
