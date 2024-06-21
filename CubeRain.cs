@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CubeRain : ObjectSpawner
 {
-    [SerializeField] private RandomerPositionSpawn _randomPosition;
+    [SerializeField] private RandomPositionSpawner _randomPosition;
     [SerializeField] private Transform _container;
     [SerializeField] private Cube _prefab;
     [SerializeField, Min(0.1f)] private float _timeSpawn;
